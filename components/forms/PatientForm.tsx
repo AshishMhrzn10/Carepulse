@@ -9,6 +9,7 @@ import SubmitButton from "../ui/SubmitButton";
 import { useState } from "react";
 import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
+import { createUser } from "@/lib/actions/patient.actions";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -39,16 +40,18 @@ const PatientForm = () => {
     email,
     phone
   }: z.infer<typeof UserFormValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    console.log("heree");
     setIsLoading(true);
     try {
-      // const userData = {name,email,phone}
-      // const user = await createUser(userData)
-      // if(user) router.push(`/patients/${user.$id}/register`)
+      const userData = { name, email, phone };
+      console.log("i n", userData);
+      const user = await createUser(userData);
+      if (user) router.push(`/patients/${user.$id}/register`);
     } catch (error) {
       console.log(error);
     }
+    console.log("hereefalse");
+    setIsLoading(false);
   }
 
   return (
@@ -79,7 +82,7 @@ const PatientForm = () => {
         <CustomFormField
           fieldType={FormFieldType.PHONE_INPUT}
           control={form.control}
-          name="Phone"
+          name="phone"
           label="Phone number"
           placeholder="98XXXXXXXX"
         />
