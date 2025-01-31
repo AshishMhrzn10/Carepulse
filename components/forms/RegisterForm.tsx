@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form, FormControl } from "@/components/ui/form";
-import CustomFormField from "../ui/CustomFormField";
-import SubmitButton from "../ui/SubmitButton";
+import CustomFormField from "../CustomFormField";
+import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import { PatientFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
@@ -21,7 +21,7 @@ import {
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
-import FileUploader from "../ui/FileUploader";
+import FileUploader from "../FileUploader";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();

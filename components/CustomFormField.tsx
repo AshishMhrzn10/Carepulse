@@ -13,14 +13,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Control, Form } from "react-hook-form";
-import { FormFieldType } from "../forms/PatientForm";
+import { FormFieldType } from "./forms/PatientForm";
 import Image from "next/image";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Select, SelectContent, SelectTrigger, SelectValue } from "./select";
-import { Textarea } from "./textarea";
-import { Checkbox } from "./checkbox";
-import { Label } from "./label";
+import { Select, SelectContent, SelectTrigger, SelectValue } from "./ui/select";
+import { Textarea } from "./ui/textarea";
+import { Checkbox } from "./ui/checkbox";
+import { Label } from "./ui/label";
 
 interface CustomProps {
   control: Control<any>;
